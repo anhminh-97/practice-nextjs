@@ -5,7 +5,7 @@ const Footer = () => {
     <footer>
       <div className="ass1-footer">
         <div className="container">
-          <p className="text-center">Cộng đồng chế ảnh ZendVN</p>
+          <p className="text-center">Cộng đồng chế ảnh</p>
         </div>
       </div>
     </footer>

@@ -6,7 +6,7 @@ const login = () => {
     <div className="ass1-login">
       <div className="ass1-login__logo">
         <Link href="/" passHref>
-          <a className="ass1-logo">ZendVn Meme</a>
+          <a className="ass1-logo">Meme App</a>
         </Link>
       </div>
       <div className="ass1-login__content">

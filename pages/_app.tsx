@@ -34,7 +34,7 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
         <meta name="keywords" content="HTML5 Template" />
         <meta name="description" content="Cộng đồng chế ảnh ZendVN" />
         <meta name="author" content="etheme.com" />
-        <title>Cộng đồng chế ảnh ZendVN</title>
+        <title>Cộng đồng chế ảnh</title>
         <link rel="icon" href="/favicon.ico" />
         <link
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
