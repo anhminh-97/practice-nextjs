@@ -56,7 +56,7 @@ const PostDetailSidebar = () => {
         <p>Share Link</p>
       </div>
       <div className="ass1-aside__social">
-        <Link href="/" passHref>
+        <Link href="/">
           <a className="ass1-btn-social__facebook ass1-btn-social">
             <i className="fa fa-facebook" aria-hidden="true" />
           </a>

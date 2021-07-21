@@ -95,7 +95,9 @@ const PostDetailContent = () => {
           </div>
         </div>
       </div> */}
-      <PostItem />
+      {/* {listPosts.map((post) => (
+        <PostItem key={post.PID} post={post} />
+      ))} */}
       <PostCommentForm />
       <PostCommentList />
     </div>

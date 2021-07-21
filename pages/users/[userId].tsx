@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap'
 import { UserDetailPosts } from '../../components/UserDetailPosts'
 import { UserDetailInfo } from './../../components/UserDetailInfo'
 
-const userDetail = () => {
+const UserDetail = () => {
   return (
     <Container>
       <UserDetailInfo />
@@ -12,4 +12,4 @@ const userDetail = () => {
   )
 }
 
-export default userDetail
+export default UserDetail

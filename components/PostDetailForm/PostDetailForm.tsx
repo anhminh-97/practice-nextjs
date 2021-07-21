@@ -23,7 +23,7 @@ const PostDetailForm = () => {
             <Image src="/images/no_image_available.jpg" alt="default" width={670} height={450} />
           </a>
         </div>
-        <Link href="https://memeful.com/" passHref>
+        <Link href="https://memeful.com/">
           <a target="_blank" className="ass1-btn ass1-btn-meme">
             Chế ảnh từ meme
           </a>

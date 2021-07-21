@@ -1,38 +1,59 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
+import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime'
+import 'dayjs/locale/vi'
+import { PostType } from '../../pages'
+import { ROUTER } from '../../constants/commonConstants'
 
-const PostItem = () => {
+type PropsType = {
+  post: PostType
+}
+
+dayjs.extend(relativeTime)
+
+const PostItem: React.FC<PropsType> = ({ post }) => {
   return (
     <div className="ass1-section__item">
       <div className="ass1-section">
         <div className="ass1-section__head">
-          <a href="bai-viet-chi-tiet.html" className="ass1-section__avatar ass1-avatar">
-            <Image src="/images/avatar-02.png" alt="" width={38} height={38} />
-          </a>
-          <div>
-            <a href="bai-viet-chi-tiet.html" className="ass1-section__name">
-              Thanos
+          <Link href={ROUTER.User} as={`/users/${post.USERID}`}>
+            <a className="ass1-section__avatar ass1-avatar">
+              <Image
+                src={post.profilepicture || '/images/avatar-03.png'}
+                alt={post.fullname}
+                width={38}
+                height={38}
+              />
             </a>
-            <span className="ass1-section__passed">2 giờ trước</span>
+          </Link>
+          <div>
+            <Link href={ROUTER.User} as={`/users/${post.USERID}`}>
+              <a className="ass1-section__name">{post.fullname}</a>
+            </Link>
+            <span className="ass1-section__passed">
+              {dayjs(post.time_added).locale('vi').fromNow()}
+            </span>
           </div>
         </div>
         <div className="ass1-section__content">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et inventore obcaecati eum
-            deserunt ut, aperiam quas! Placeat blanditiis consequatur, deserunt facere iusto amet a
-            ad suscipit laudantium unde quidem perferendis!
-          </p>
+          <p>{post.post_content}</p>
           <div className="ass1-section__image">
-            <a href="bai-viet-chi-tiet.html">
-              <Image src="/images/microphone-1209816_1920.jpg" alt="" width={670} height={450} />
-            </a>
+            <Link href={ROUTER.PostDetail} as={`posts/${post.PID}`}>
+              <a>
+                <Image src={post.url_image} alt={post.url_image} width={670} height={450} />
+              </a>
+            </Link>
           </div>
         </div>
         <div className="ass1-section__footer">
-          <a href="#" className="ass1-section__btn-comment ass1-btn-icon">
-            <i className="icon-Comment_Full" />
-            <span>982</span>
-          </a>
+          <Link href={ROUTER.PostDetail} as={`posts/${post.PID}`}>
+            <a className="ass1-section__btn-comment ass1-btn-icon">
+              <i className="icon-Comment_Full" />
+              <span>{post.count || 0}</span>
+            </a>
+          </Link>
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 import { HomeSidebar } from './../../components/HomeSidebar'
 import { PostDetailContent } from './../../components/PostDetailContent'
 
-const postDetail = () => {
+const PostDetail = () => {
   return (
     <Container>
       <Row>
@@ -11,11 +11,11 @@ const postDetail = () => {
           <PostDetailContent />
         </Col>
         <Col lg={4}>
-          <HomeSidebar />
+          {/* <HomeSidebar /> */}
         </Col>
       </Row>
     </Container>
   )
 }
 
-export default postDetail
+export default PostDetail

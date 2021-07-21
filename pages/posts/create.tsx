@@ -1,9 +1,11 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { PostDetailSidebar } from '../../components/PostDetailSidebar'
+import { useAuthen } from '../../helpers/useAuthen'
 import { PostDetailForm } from './../../components/PostDetailForm'
 
-const create = () => {
+const Create = () => {
+  useAuthen()
   return (
     <Container>
       <Row>
@@ -18,4 +20,4 @@ const create = () => {
   )
 }
 
-export default create
+export default Create

@@ -4,26 +4,38 @@ import '../styles/css/style.css'
 import App from 'next/app'
 import Head from 'next/head'
 
-import { AppContext, AppProps } from 'next/app'
 import { useMemo } from 'react'
+import { AppContext, AppProps } from 'next/app'
 
 import { Header } from './../components/Header'
 import { Footer } from '../components/Footer'
+import { getTokenSSRAndCSR } from './../helpers/index'
+import { useGlobalState } from '../state'
+import userService from './../services/userService'
 
 const MyApp = ({ Component, pageProps, router }: AppProps) => {
+  const pathname = router.pathname
+  const [, setCurrentUser] = useGlobalState('currentUser')
+  const [, setToken] = useGlobalState('token')
+
+  useMemo(() => {
+    setCurrentUser(pageProps.userInfo)
+    setToken(pageProps.token)
+  }, [])
+
   const hiddenFooter = useMemo(() => {
     const excluded = ['/', '/posts/[postId]']
-    const currentRouter = router.pathname
+    const currentRouter = pathname
 
     return excluded.indexOf(currentRouter) !== -1
-  }, [router])
+  }, [pathname])
 
   const hiddenHeader = useMemo(() => {
     const excluded = ['/login', '/register']
-    const currentRouter = router.pathname
+    const currentRouter = pathname
 
     return excluded.indexOf(currentRouter) !== -1
-  }, [router])
+  }, [pathname])
 
   return (
     <div id="root">
@@ -59,10 +71,15 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => {
 }
 
 MyApp.getInitialProps = async (appContext: AppContext) => {
-  // calls page's `getInitialProps` and fills `appProps.pageProps`
+  let userRes = null
   const appProps = await App.getInitialProps(appContext)
 
-  return { ...appProps }
+  const [token, userToken] = getTokenSSRAndCSR(appContext.ctx)
+
+  if (typeof window === 'undefined' && userToken?.id && userToken?.email) {
+    userRes = await userService.getUserById(userToken.id)
+  }
+  return { pageProps: { ...appProps.pageProps, token, userInfo: userRes && userRes.user } }
 }
 
 export default MyApp
