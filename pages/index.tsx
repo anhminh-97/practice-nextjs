@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import cookie from 'cookie'
 import { Container, Row, Col } from 'react-bootstrap'
 
 import { HomeSidebar } from '../components/HomeSidebar'
 import { PostListItem } from '../components/PostListItem'
-import { GetServerSideProps, InferGetServerSidePropsType, NextPageContext } from 'next'
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 import postService from '../services/postService'
-import { getTokenSSRAndCSR, parseJwt } from '../helpers'
+import { parseJwt } from '../helpers'
 
 export type PostType = {
   PID: string
@@ -33,9 +33,6 @@ const Home: HomeProps = ({ listPosts, userPosts }) => {
       <Row>
         <Col lg={8}>
           <PostListItem listPosts={listPosts} />
-          <button className="load-more ass1-btn">
-            <span>Xem thêm</span>
-          </button>
         </Col>
         <Col lg={4}>
           <HomeSidebar userPosts={userPosts} />

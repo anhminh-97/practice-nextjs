@@ -5,11 +5,19 @@ type ButtonProps = {
   className?: string
   isLoading?: boolean
   strokeColor?: string
+  onClick?: () => void
 }
 
-const Button: React.FC<ButtonProps> = ({ type, className, isLoading, strokeColor, children }) => {
+const Button: React.FC<ButtonProps> = ({
+  type,
+  className,
+  isLoading,
+  strokeColor,
+  children,
+  onClick,
+}) => {
   return (
-    <button type={type} className={className}>
+    <button onClick={onClick} type={type} className={className} disabled={isLoading}>
       {isLoading && (
         <svg
           xmlns="http://www.w3.org/2000/svg"
