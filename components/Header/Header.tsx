@@ -8,6 +8,7 @@ import { useRouter } from 'next/router'
 import classes from './header.module.css'
 import { useGlobalState } from '../../state'
 import { ROUTER } from '../../constants/commonConstants'
+import HeaderSearch from './HeaderSearch'
 
 const Header = () => {
   const router = useRouter()
@@ -189,19 +190,7 @@ const Header = () => {
               </li>
             </ul>
           </nav>
-          <div className="ass1-header__search">
-            <form action="#">
-              <label>
-                <input
-                  type="search"
-                  name="search-text"
-                  className="form-control"
-                  placeholder="Nhập từ khóa ..."
-                />
-                <i className="icon-Search" />
-              </label>
-            </form>
-          </div>
+          <HeaderSearch />
           <Link href={ROUTER.Create}>
             <a className="ass1-header__btn-upload ass1-btn">
               <i className="icon-Upvote" /> Upload

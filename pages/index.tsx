@@ -45,7 +45,7 @@ const Home: HomeProps = ({ listPosts, userPosts }) => {
 export const getServerSideProps: GetServerSideProps<HomeDataProps> = async (context) => {
   const cookieStr = context.req.headers.cookie || ''
   const token = cookie.parse(cookieStr).token
-  const userid = parseJwt(token).id
+  const userid = parseJwt(token)?.id
 
   const listPostPos = postService.getPostPaging()
   const userPostPos = postService.getPostsByUserId({ token, userid })

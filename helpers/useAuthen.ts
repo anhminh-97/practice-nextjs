@@ -10,7 +10,7 @@ const useAuthen = () => {
   const [token] = useGlobalState('token')
   useEffect(() => {
     const userToken = parseJwt(token)
-    if (!(userToken && userToken.id && userToken.email)) {
+    if (!(userToken && userToken?.id && userToken?.email)) {
       router.push(ROUTER.Home)
     }
   }, [token])
@@ -22,7 +22,7 @@ const useNotAuthen = () => {
   const [token] = useGlobalState('token')
   useEffect(() => {
     const userToken = parseJwt(token)
-    if (userToken && userToken.id && userToken.email) {
+    if (userToken && userToken?.id && userToken?.email) {
       router.push(ROUTER.Home)
     }
   }, [token])
