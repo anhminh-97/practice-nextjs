@@ -13,7 +13,7 @@ const useAuthen = () => {
     if (!(userToken && userToken?.id && userToken?.email)) {
       router.push(ROUTER.Home)
     }
-  }, [token])
+}, [router, token])
 }
 
 // chua dang nhap moi vao duoc
@@ -25,7 +25,7 @@ const useNotAuthen = () => {
     if (userToken && userToken?.id && userToken?.email) {
       router.push(ROUTER.Home)
     }
-  }, [token])
+  }, [router, token])
 }
 
 export { useAuthen, useNotAuthen }

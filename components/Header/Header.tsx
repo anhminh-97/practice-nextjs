@@ -199,17 +199,19 @@ const Header = () => {
 
           {userInfo ? (
             <div className={classes['wrapper-user']}>
-              <a className={classes['user-header']}>
-                <span className={classes.avatar}>
-                  <Image
-                    src={userInfo.profilepicture || '/images/avatar-03.png'}
-                    alt="avatar"
-                    width={35}
-                    height={35}
-                  />
-                </span>
-                <span className={classes.email}>{userInfo.email}</span>
-              </a>
+              <Link href={ROUTER.User} as={`/users/${userInfo.USERID}`}>
+                <a className={classes['user-header']}>
+                  <span className={classes.avatar}>
+                    <Image
+                      src={userInfo.profilepicture || '/images/avatar-03.png'}
+                      alt="avatar"
+                      width={35}
+                      height={35}
+                    />
+                  </span>
+                  <span className={classes.email}>{userInfo.email}</span>
+                </a>
+              </Link>
               <div onClick={handleLogout} className={classes.logout}>
                 Logout
               </div>

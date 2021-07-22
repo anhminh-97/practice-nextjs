@@ -1,7 +1,7 @@
 import React from 'react'
 import { createGlobalState } from 'react-hooks-global-state'
 
-type TypeCurrentState = {
+export type TypeUser = {
   USERID: string
   email: string
   password: string
@@ -11,10 +11,12 @@ type TypeCurrentState = {
   status: string
   profilepicture: string
   permission: string
+  youviewed: string
+  yourviewed: string
 }
 
 type TypeInitState = {
-  currentUser: TypeCurrentState | null
+  currentUser: TypeUser | null
   token?: string
 }
 

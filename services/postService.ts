@@ -10,6 +10,10 @@ const postService = {
     const url = `/post/getListPostUserID.php?userid=${userid}`
     return api.callJson(url, { token })
   },
+  getPostSearch: async ({ query }) => {
+    const url = `/post/search.php?query=${encodeURI(query)}`
+    return api.callJson(url)
+  },
 }
 
 export default postService

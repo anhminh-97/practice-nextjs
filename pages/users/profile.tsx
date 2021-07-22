@@ -7,7 +7,7 @@ const UserProfile = () => {
       <div className="ass1-login__content">
         <p>Profile</p>
         <div className="ass1-login__form">
-          <div className="mb-4">
+          <div className="mb-4 text-center">
             <Image src="/images/avatar-02.png" alt="" width={100} height={100} />
           </div>
           <form action="#">
