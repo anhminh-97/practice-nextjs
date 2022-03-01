@@ -93,16 +93,16 @@ export const getServerSideProps: GetServerSideProps<PostEditDataProps> = async (
   if (postDetail?.data?.post) {
     postDetailData = {
       ...postDetail?.data?.post,
-      fullname: userInfoData?.user?.fullname || '',
-      profilepicture: userInfoData?.user?.profilepicture || '/images/avatar-03.png',
+      // fullname: userInfoData?.user?.fullname || '',
+      // profilepicture: userInfoData?.user?.profilepicture || '/images/avatar-03.png',
     }
   }
 
   const props = {
     postDetailData,
-    comments: commentsRes?.comments || [],
+    // comments: commentsRes?.comments || [],
     postCategories: postDetail?.data?.categories || [],
-    userPosts: userPostRes?.posts || [],
+    // userPosts: userPostRes?.posts || [],
   }
 
   return {
