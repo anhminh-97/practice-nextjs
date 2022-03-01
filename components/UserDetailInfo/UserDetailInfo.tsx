@@ -1,8 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { TypeUser, useGlobalState } from '../../state'
+import { useGlobalState } from '../../state'
 import { ROUTER } from './../../constants/commonConstants'
+import { TypeUser } from '../../types/user'
 
 type PropsType = {
   userDetailInfo: TypeUser | null
@@ -17,7 +18,7 @@ const UserDetailInfo: React.FC<PropsType> = ({ userDetailInfo, postCount }) => {
       <div className="ass1-head-user__content">
         <div className="ass1-head-user__image">
           <Image
-            src={userDetailInfo.profilepicture || '/images/cat-1634369_1920.jpg'}
+            src={userDetailInfo.profilepicture || '/images/avatar-03.png'}
             alt={userDetailInfo.fullname}
             width={172}
             height={172}

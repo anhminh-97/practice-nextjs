@@ -49,7 +49,7 @@ const Login = () => {
     <div className="ass1-login">
       <div className="ass1-login__logo">
         <Link href={ROUTER.Home}>
-          <a className="ass1-logo">Meme App</a>
+          <a className="ass1-logo text-center">Meme App</a>
         </Link>
       </div>
       <div className="ass1-login__content">

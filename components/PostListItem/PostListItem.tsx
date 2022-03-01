@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { PostType } from '../../pages'
 import postService from '../../services/postService'
+import { PostType } from '../../types/post'
 import { PostItem } from '../PostItem'
 import Button from './../Button/Button'
 

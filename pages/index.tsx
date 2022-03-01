@@ -7,18 +7,7 @@ import { PostListItem } from '../components/PostListItem'
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 import postService from '../services/postService'
 import { parseJwt } from '../helpers'
-
-export type PostType = {
-  PID: string
-  USERID: string
-  fullname: string
-  profilepicture: string
-  url_image: string
-  post_content: string
-  time_added: string
-  status: string
-  count: string | null
-}
+import { PostType } from '../types/post'
 
 type HomeDataProps = {
   listPosts: PostType[]
@@ -37,6 +26,7 @@ const Home: HomeProps = ({ listPosts, userPosts }) => {
         <Col lg={4}>
           <HomeSidebar userPosts={userPosts} />
         </Col>
+
       </Row>
     </Container>
   )

@@ -7,6 +7,6 @@ module.exports = withImages({
     includePaths: [path.join(__dirname, 'styles')], 
   },
   images: {
-    domains: ['media.giphy.com', 'api-meme-zendvn-01.herokuapp.com', 'i.memeful.com'],
+    domains: ['media.giphy.com', 'api-meme-zendvn-01.herokuapp.com', 'i.memeful.com', 'gph.is'],
   },
 })

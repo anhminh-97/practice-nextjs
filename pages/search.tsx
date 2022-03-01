@@ -2,11 +2,11 @@ import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { ROUTER } from '../constants/commonConstants'
 import { NextPage, NextPageContext } from 'next'
-import { PostType } from '.'
 import postService from '../services/postService'
 import Masonry from 'react-masonry-component'
-import PostItem from './../components/PostItem/PostItem'
+import { PostItem } from './../components/PostItem'
 import { Container } from 'react-bootstrap'
+import { PostType } from '../types/post'
 
 type PropsType = {
   listPosts: PostType[]

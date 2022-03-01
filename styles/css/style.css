@@ -74,6 +74,9 @@ label {
   color: #a1a5ae;
   font-size: 16px;
 }
+.cursor-pointer {
+  cursor: pointer;
+}
 
 select.form-control {
   display: inline-block;
@@ -82,6 +85,10 @@ select.form-control {
 }
 select.form-control:focus {
   border-color: #3482e2;
+}
+#nprogress .bar {
+  z-index: 999999;
+  height: 3px;
 }
 .ass1-login__form form > input,
 .ass1-login__form form .form-group {
@@ -309,6 +316,8 @@ select.form-control:focus {
 }
 .ass1-logo {
   display: inline-block;
+  font-weight: bold;
+  font-size: 21px;
 }
 .ass1-logo img {
   max-width: 100%;

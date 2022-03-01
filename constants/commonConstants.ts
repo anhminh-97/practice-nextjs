@@ -7,6 +7,7 @@ export const ROUTER = {
   User: '/users/[userId]',
   Profile: '/users/profile',
   Password: '/users/password',
+  Categories: '/categories/[cateId]'
 }
 
 export const BASE_URL = 'http://api-meme-zendvn-01.herokuapp.com/api'

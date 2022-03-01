@@ -1,9 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
 import { ROUTER } from './../../constants/commonConstants'
-import { PostType } from '../../pages'
 import { useGlobalState } from '../../state'
 import PostItem from './../PostItem/PostItem'
+import { PostType } from '../../types/post'
 
 type PropsType = {
   userPosts: PostType[]

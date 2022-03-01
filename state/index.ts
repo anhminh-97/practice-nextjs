@@ -1,28 +1,21 @@
-import React from 'react'
 import { createGlobalState } from 'react-hooks-global-state'
+import { TypeUser } from '../types/user'
 
-export type TypeUser = {
-  USERID: string
-  email: string
-  password: string
-  fullname: string
-  gender: string
-  description: string
-  status: string
-  profilepicture: string
-  permission: string
-  youviewed: string
-  yourviewed: string
+type TypeCategory = {
+  id: number
+  text: string
 }
 
 type TypeInitState = {
   currentUser: TypeUser | null
   token?: string
+  categories: TypeCategory[]
 }
 
 const initialState: TypeInitState = {
   currentUser: null,
   token: '',
+  categories: [],
 }
 const { useGlobalState } = createGlobalState(initialState)
 
